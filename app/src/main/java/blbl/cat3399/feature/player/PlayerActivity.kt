@@ -2,6 +2,7 @@
 
 package blbl.cat3399.feature.player
 
+import androidx.lifecycle.lifecycleScope
 import android.content.Intent
 import android.net.Uri
 import android.app.Activity
