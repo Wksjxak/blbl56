@@ -1,8 +1,8 @@
 package blbl.cat3399.feature.player
 
-import androidx.lifecycle.lifecycleScope
 import android.os.SystemClock
 import android.view.View
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import blbl.cat3399.R
 import blbl.cat3399.core.ui.AppToast
@@ -38,6 +38,12 @@ internal fun PlayerActivity.initTimerPanel() {
     timerSettingsAdapter = adapter
     binding.recyclerTimer.layoutManager = LinearLayoutManager(this)
     binding.recyclerTimer.adapter = adapter
+    binding.btTimerCustomStart.setOnClickListener {
+        val h = binding.etTimerCustomH.text.toString().toIntOrNull() ?: 0
+        val m = binding.etTimerCustomM.text.toString().toIntOrNull() ?: 0
+        val s = binding.etTimerCustomS.text.toString().toIntOrNull() ?: 0
+        startCustomTimerExit(h, m, s)
+    }
     refreshTimerItems()
 }
 
@@ -72,9 +78,14 @@ internal fun PlayerActivity.timerStatusSubtitle(): String {
 
 internal fun PlayerActivity.formatTimerClock(ms: Long): String {
     val totalSec = (ms.coerceAtLeast(0L) + 999L) / 1000L
-    val minutes = totalSec / 60L
+    val hours = totalSec / 3600L
+    val minutes = (totalSec % 3600L) / 60L
     val seconds = totalSec % 60L
-    return String.format(Locale.US, "%02d:%02d", minutes, seconds)
+    return if (hours > 0L) {
+        String.format(Locale.US, "%02d:%02d:%02d", hours, minutes, seconds)
+    } else {
+        String.format(Locale.US, "%02d:%02d", minutes, seconds)
+    }
 }
 
 internal fun PlayerActivity.toggleTimerPanel() {
@@ -121,6 +132,20 @@ internal fun PlayerActivity.startTimerExit(minutes: Int) {
     timerExitEndAtElapsedMs = SystemClock.elapsedRealtime() + minutes.coerceAtLeast(1) * 60_000L
     startTimerTick()
     AppToast.show(this, getString(R.string.player_timer_toast_set_fmt, minutes))
+    refreshTimerItems()
+}
+
+/** 自定义时分秒启动定时退出；全为 0 时提示无效。 */
+internal fun PlayerActivity.startCustomTimerExit(hours: Int, minutes: Int, seconds: Int) {
+    val totalSec = hours.toLong() * 3600L + minutes.toLong() * 60L + seconds.toLong()
+    if (totalSec < 1L) {
+        AppToast.show(this, getString(R.string.player_timer_custom_invalid))
+        return
+    }
+    timerExitAfterCurrentVideo = false
+    timerExitEndAtElapsedMs = SystemClock.elapsedRealtime() + totalSec * 1000L
+    startTimerTick()
+    AppToast.show(this, getString(R.string.player_timer_toast_set_custom_fmt, hours, minutes, seconds))
     refreshTimerItems()
 }
 
