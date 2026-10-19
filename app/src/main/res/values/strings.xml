@@ -144,4 +144,10 @@
     <string name="player_timer_toast_set_fmt">已设置 %1$d 分钟后退出播放器</string>
     <string name="player_timer_toast_off">已取消定时退出</string>
     <string name="player_timer_toast_after_current">将在本视频播放结束后退出</string>
+    <string name="player_timer_hint_h">时</string>
+    <string name="player_timer_hint_m">分</string>
+    <string name="player_timer_hint_s">秒</string>
+    <string name="player_timer_start">开始定时</string>
+    <string name="player_timer_custom_invalid">请输入有效的时分秒</string>
+    <string name="player_timer_toast_set_custom_fmt">已设置 %1$d 时 %2$d 分 %3$d 秒后退出播放器</string>
 </resources>
