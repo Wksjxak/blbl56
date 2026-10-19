@@ -237,11 +237,11 @@
     <dimen name="player_comment_item_stroke_width">1dp</dimen>
     <dimen name="player_comment_item_padding">12dp</dimen>
 
-    <dimen name="player_comment_context_tag_text_size">12sp</dimen>
+    <dimen name="player_comment_context_tag_text_size">14sp</dimen>
     <dimen name="player_comment_avatar_size">36dp</dimen>
     <dimen name="player_comment_avatar_margin_top">6dp</dimen>
     <dimen name="player_comment_user_margin_start">12dp</dimen>
-    <dimen name="player_comment_user_text_size">16sp</dimen>
+    <dimen name="player_comment_user_text_size">19sp</dimen>
     <dimen name="player_comment_level_height">10dp</dimen>
     <dimen name="player_comment_level_margin_start">6dp</dimen>
 
@@ -249,14 +249,14 @@
     <dimen name="player_comment_up_badge_margin_start">6dp</dimen>
     <dimen name="player_comment_up_badge_min_width">16dp</dimen>
     <dimen name="player_comment_up_badge_padding_h">4dp</dimen>
-    <dimen name="player_comment_up_badge_text_size">11sp</dimen>
+    <dimen name="player_comment_up_badge_text_size">13sp</dimen>
 
-    <dimen name="player_comment_time_text_size">12sp</dimen>
+    <dimen name="player_comment_time_text_size">14sp</dimen>
     <dimen name="player_comment_like_icon_size">13dp</dimen>
     <dimen name="player_comment_like_icon_margin_start">10dp</dimen>
     <dimen name="player_comment_like_count_margin_start">4dp</dimen>
     <dimen name="player_comment_message_margin_top">4dp</dimen>
-    <dimen name="player_comment_message_text_size">15sp</dimen>
+    <dimen name="player_comment_message_text_size">18sp</dimen>
     <dimen name="player_comment_expand_padding_top">4dp</dimen>
 
     <dimen name="player_comment_pictures_margin_top">8dp</dimen>
@@ -265,11 +265,11 @@
     <dimen name="player_comment_picture_gap">8dp</dimen>
 
     <dimen name="player_comment_reply_preview_padding_top">6dp</dimen>
-    <dimen name="player_comment_reply_preview_text_size">13sp</dimen>
+    <dimen name="player_comment_reply_preview_text_size">16sp</dimen>
     <dimen name="player_comment_reply_preview_margin_top">4dp</dimen>
 
     <dimen name="player_comment_meta_margin_top">8dp</dimen>
-    <dimen name="player_comment_meta_text_size">12sp</dimen>
+    <dimen name="player_comment_meta_text_size">14sp</dimen>
 
     <!-- Player: settings panel item -->
     <dimen name="player_setting_item_margin_bottom">4dp</dimen>
